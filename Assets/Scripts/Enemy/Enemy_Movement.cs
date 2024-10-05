@@ -17,7 +17,7 @@ public class Enemy_Movement : MonoBehaviour
         _player = GameObject.Find("Player").transform;   
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         if (_isChasing)
         {
             MoveEnemy();
@@ -27,11 +27,13 @@ public class Enemy_Movement : MonoBehaviour
     private void MoveEnemy()
     {
         Vector2 direction = (_player.position - transform.position).normalized;
-        _rb.velocity = new Vector2(direction.x * _speed, direction.y * _speed);
+        _rb.velocity = new Vector2(direction.x * ( _speed * Time.fixedDeltaTime), direction.y * (_speed * Time.fixedDeltaTime));
         // float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        // _rb.rotation = angle;
+        // transform.rotation = Quaternion.Euler(0, 0, angle -180);
+        // // _rb.rotation = angle;
         // direction.Normalize();
-        // _rb.MovePosition((Vector2)transform.position + (direction * _speed * Time.deltaTime));
+        // tranform
+        // _rb.MovePosition((Vector2)transform.position + (direction * _speed * Time.fixedDeltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
