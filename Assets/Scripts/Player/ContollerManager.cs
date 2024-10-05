@@ -32,15 +32,32 @@ public class ControllerManager : MonoBehaviour
     private void PlayerActions()
     {
         _movement = _playerController.Movement.Move.ReadValue<Vector2>();
+
+        _animator.SetFloat("moveX", _movement.x);
+        _animator.SetFloat("moveY", _movement.y);
+
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+        FixedDirection();
     }
 
     private void MovePlayer()
     {
         _rb.MovePosition( _rb.position + _movement * _speed * Time.fixedDeltaTime);
+    }
+
+    private void FixedDirection()
+    {
+        if (Input.mousePosition.x - Camera.main.WorldToScreenPoint(transform.position).x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 }
