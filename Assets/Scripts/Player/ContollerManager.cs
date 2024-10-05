@@ -10,11 +10,13 @@ public class ControllerManager : MonoBehaviour
     private PlayerController _playerController;
     private Rigidbody2D _rb;
     private Vector2 _movement;
+    private Animator _animator;
 
     private void Awake()    
     {
         _playerController = new PlayerController();    
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
