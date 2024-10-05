@@ -6,8 +6,8 @@ public class Enemy_Movement : MonoBehaviour
 {
     [SerializeField] private float _speed = 3.5f;
     private bool _isChasing;
-    // [SerializeField]//
     private Transform _player;
+    private bool _isFacingRight = true;
 
     private Rigidbody2D _rb;
 
@@ -28,12 +28,21 @@ public class Enemy_Movement : MonoBehaviour
     {
         Vector2 direction = (_player.position - transform.position).normalized;
         _rb.velocity = new Vector2(direction.x * ( _speed * Time.fixedDeltaTime), direction.y * (_speed * Time.fixedDeltaTime));
-        // float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        // transform.rotation = Quaternion.Euler(0, 0, angle -180);
-        // // _rb.rotation = angle;
-        // direction.Normalize();
-        // tranform
-        // _rb.MovePosition((Vector2)transform.position + (direction * _speed * Time.fixedDeltaTime));
+
+        if (_player.position.x > transform.position.x && !_isFacingRight)
+        {
+            Flip();
+        }
+        else if (_player.position.x < transform.position.x && !_isFacingRight)
+        {
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        _isFacingRight = !_isFacingRight;
+        transform.Rotate(0, 180, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D other) 

@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 
 public class ControllerManager : MonoBehaviour
 {
+    public bool FacingLeft { get { return _facingLeft; } set { _facingLeft = value; } }
+
     [SerializeField] private float _speed = 5.0f;
 
     private PlayerController _playerController;
     private Rigidbody2D _rb;
     private Vector2 _movement;
     private Animator _animator;
+
+    private bool _facingLeft = false;
 
     private void Awake()    
     {
@@ -54,10 +58,12 @@ public class ControllerManager : MonoBehaviour
         if (Input.mousePosition.x - Camera.main.WorldToScreenPoint(transform.position).x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            FacingLeft = true;
         }
         else
         {
             transform.localScale = new Vector3(1, 1, 1);
+            FacingLeft = false;
         }
     }
 }
