@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 152549867}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1052,6 +1052,7 @@ GameObject:
   - component: {fileID: 1739772920}
   - component: {fileID: 1739772919}
   - component: {fileID: 1739772918}
+  - component: {fileID: 1739772924}
   m_Layer: 0
   m_Name: Elite_Virus_0
   m_TagString: Untagged
@@ -1227,6 +1228,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1739772924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739772917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5350fcae7d2bcd949a2075a37d207cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meleeRange: 10
+  _meleeDamage: 5
+  _attackCooldown: 2
 --- !u!1 &1933928969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1333,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.24768601, g: 0.32699242, b: 0.4339623, a: 1}
+  m_Color: {r: 0.43529412, g: 0.24705882, b: 0.37301618, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
