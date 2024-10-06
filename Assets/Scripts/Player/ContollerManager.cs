@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class ControllerManager : MonoBehaviour
 {
     public bool FacingLeft { get { return _facingLeft; } set { _facingLeft = value; } }
+    // public static ControllerManager Instance;
 
     [SerializeField] private float _speed = 5.0f;
 
@@ -18,6 +19,7 @@ public class ControllerManager : MonoBehaviour
 
     private void Awake()    
     {
+        // Instance = this;
         _playerController = new PlayerController();    
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
