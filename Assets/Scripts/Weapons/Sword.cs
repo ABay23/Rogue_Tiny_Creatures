@@ -7,6 +7,7 @@ public class Sword : MonoBehaviour
     
     [SerializeField] private GameObject _swingEffect;
     [SerializeField] private Transform _swingEffectPosition;
+    [SerializeField] private Transform _weaponCollider;
 
 
     private PlayerController _playerController;
@@ -21,6 +22,7 @@ public class Sword : MonoBehaviour
         _playerController = new PlayerController();
         _controllerManager = GetComponentInParent<ControllerManager>();
         _activeWeapon = GetComponentInParent<ActiveWeapon>();
+        _weaponCollider = GetComponent<Transform>();
         
     }
 
@@ -64,10 +66,12 @@ public class Sword : MonoBehaviour
         if (mousePosition.x < playerCreenPosition.x)
         {
             _activeWeapon.transform.rotation = Quaternion.Euler(180, 0, -angle);
+            _weaponCollider.transform.rotation = Quaternion.Euler(180, 0, -angle);
         }
         else
         {
             _activeWeapon.transform.rotation = Quaternion.Euler(0, 0, angle);
+            _weaponCollider.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 
         

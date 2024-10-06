@@ -27,23 +27,26 @@ public class Enemy_Movement : MonoBehaviour
     private void MoveEnemy()
     {
         Vector2 direction = (_player.position - transform.position).normalized;
-        _rb.velocity = new Vector2(direction.x * ( _speed * Time.fixedDeltaTime), direction.y * (_speed * Time.fixedDeltaTime));
+        _rb.velocity = new Vector2(direction.x * (_speed * Time.fixedDeltaTime), direction.y * (_speed * Time.fixedDeltaTime));
 
-        if (_player.position.x > transform.position.x && !_isFacingRight)
+        // Check if the player is on the right side of the enemy
+        if (_player.position.x > transform.position.x && _isFacingRight)
         {
             Flip();
         }
         else if (_player.position.x < transform.position.x && !_isFacingRight)
         {
             Flip();
-        }
+        } 
     }
 
-    private void Flip()
-    {
-        _isFacingRight = !_isFacingRight;
-        transform.Rotate(0, 180, 0);
-    }
+        private void Flip()
+        {
+            // Flip the facing direction
+            _isFacingRight = !_isFacingRight;
+            // Rotate the enemy to face the opposite direction
+            transform.Rotate(0f, 180f, 0f);
+        }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
