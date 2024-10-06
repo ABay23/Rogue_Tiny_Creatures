@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {   
-    public enum EnemyType { Poison, Fire, Ice, Normal }
+    public enum EnemyType { Poison, Fire, Ice}
 
     [SerializeField] private EnemyType _enemyType;
     [SerializeField] private GameObject _poisonAilment;
