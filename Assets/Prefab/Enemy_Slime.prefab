@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5577168698974841334}
   - component: {fileID: 6260718418062991008}
   - component: {fileID: 1729198147867572936}
+  - component: {fileID: 2119382205101521194}
   m_Layer: 0
   m_Name: Enemy_Slime
   m_TagString: Untagged
@@ -239,3 +240,15 @@ MonoBehaviour:
   _iceAilment: {fileID: 5402084846388042338, guid: 099e5d5613f4b164694e81a6ee0160f4, type: 3}
   _startingHealth: 10
   _knockBackForce: 15
+--- !u!114 &2119382205101521194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480276515448347094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222e84c5dbe2be84d8d7d23658096b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

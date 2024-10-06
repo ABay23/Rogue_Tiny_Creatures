@@ -17,12 +17,15 @@ public class ControllerManager : MonoBehaviour
 
     private bool _facingLeft = false;
 
+    private KnockBack _knockBack;
+
     private void Awake()    
     {
         // Instance = this;
         _playerController = new PlayerController();    
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _knockBack = GetComponent<KnockBack>();
     }
 
     private void OnEnable()

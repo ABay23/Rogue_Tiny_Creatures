@@ -25,22 +25,27 @@ public class EnemyHealth : MonoBehaviour
         _knockBack = GetComponent<KnockBack>();
     }
 
-    private void Start() {
+    private void Start() 
+    {
         _currentHealth = _startingHealth;
     }
 
-    public void TakeDamage(int damage) {
+    public void TakeDamage(int damage, Transform _damageSource) 
+    {
         _currentHealth -= damage;
-        // _knockBack.GetNknockedBack(_damageSource: ControllerManager.Instance.transform, _knockBackForce);
-        if (_currentHealth <= 0) {
-            Die();
-        }
+        // _knockBack.GetKnockedBack(_damageSource: ControllerManager.Instance.transform, _knockBackForce);
+        _knockBack.GetKnockedBack(_damageSource, _knockBackForce);
+        CheckDeath();
+        
     }
 
-    private void Die() 
-    {
-        SpawnAilment();
-        Destroy(gameObject);
+    private void CheckDeath() 
+    {   
+        if (_currentHealth <= 0) 
+        {
+            SpawnAilment();
+            Destroy(gameObject);
+        }
     }
 
     private void SpawnAilment()

@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class KnockBack : MonoBehaviour
 {
-    public bool _gettingKnockedBack { get; private set; }
+    public bool IsGettingKnockedBack { get; private set; }
+
+    [SerializeField] private float _knockBackDuration = 0.2f;
+
     private Rigidbody2D _rb;
+
+    private void Awake() {
+        _rb = GetComponent<Rigidbody2D>();
+    }
     
-    public void GetNknockedBack(Transform _damageSource, float _knockbackForce)
+    public void GetKnockedBack(Transform _damageSource, float _knockbackForce)
     {
-        _gettingKnockedBack = true;
-        Vector2 _difference = (transform.position - _damageSource.position).normalized * _knockbackForce * _rb.mass;
-        _rb.AddForce(_difference * _knockbackForce, ForceMode2D.Impulse);
+        IsGettingKnockedBack = true;
+        Vector2 _difference = (transform.position - _damageSource.position).normalized;
+        _rb.AddForce(_difference * _knockbackForce * _rb.mass, ForceMode2D.Impulse);
 
 
     }
