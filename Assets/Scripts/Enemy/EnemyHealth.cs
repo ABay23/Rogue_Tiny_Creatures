@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private GameObject _iceAilment;
 
     [SerializeField] private int _startingHealth = 10;
-    [SerializeField] private float _knockBackForce = 15f;
+    [SerializeField] private float _knockBackForce = 30f;
 
     
 
@@ -33,7 +33,6 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage, Transform _damageSource) 
     {
         _currentHealth -= damage;
-        // _knockBack.GetKnockedBack(_damageSource: ControllerManager.Instance.transform, _knockBackForce);
         _knockBack.GetKnockedBack(_damageSource, _knockBackForce);
         CheckDeath();
         

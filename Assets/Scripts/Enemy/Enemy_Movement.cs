@@ -10,15 +10,17 @@ public class Enemy_Movement : MonoBehaviour
     private bool _isFacingRight = true;
 
     private Rigidbody2D _rb;
+    private KnockBack _knockBack;
 
     private void Awake() 
     {
         _rb = GetComponent<Rigidbody2D>();
         _player = GameObject.Find("Player").transform;   
+        _knockBack = GetComponent<KnockBack>();
     }
 
     private void FixedUpdate() {
-        if (_isChasing)
+        if (_isChasing && !_knockBack.IsGettingKnockedBack)
         {
             MoveEnemy();
         }
@@ -27,7 +29,7 @@ public class Enemy_Movement : MonoBehaviour
     private void MoveEnemy()
     {
         Vector2 direction = (_player.position - transform.position).normalized;
-        _rb.velocity = new Vector2(direction.x * (_speed * Time.fixedDeltaTime), direction.y * (_speed * Time.fixedDeltaTime));
+        _rb.velocity = direction * _speed;
 
         // Check if the player is on the right side of the enemy
         if (_player.position.x > transform.position.x && _isFacingRight)
