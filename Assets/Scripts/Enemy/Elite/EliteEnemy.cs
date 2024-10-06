@@ -6,14 +6,17 @@ using UnityEngine;
 public class EliteEnemy : MonoBehaviour
 {
     [SerializeField] private float _meleeRange = 10f;
-    [SerializeField] private float _meleeDamage = 5f;
+    [SerializeField] private int _meleeDamage = 5;
     [SerializeField] private float _attackCooldown = 2f;
 
     private Transform _player;
     private float _lastAttackTime;
+    private Animator _animator;
+    private PlayerHealth _playerHealth;
 
     private void Awake() {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
+        _playerHealth =  GetComponent<PlayerHealth>();
     }
     private void Update() 
     {
@@ -28,15 +31,15 @@ public class EliteEnemy : MonoBehaviour
 
     private void MeleeAttack()
     {
-        // Trigger attack animation
-    // Animator.SetTrigger("Attack"); // Assuming you have an Animator
+    // Trigger attack animation
+        // _animator.SetTrigger("Attack"); // Assuming you have an Animator
 
-    // Deal damage to the player
-    // PlayerHealth playerHealth = playerTransform.GetComponent<PlayerHealth>();
-    // if (playerHealth != null)
-    // {
-    //     playerHealth.TakeDamage(meleeDamage);
-    // }
-Debug.Log("Attacking Player");
-    }
+        // Deal damage to the player
+        if (_playerHealth != null)
+        {
+            _playerHealth.TakeDamage(_meleeDamage);
+            Debug.Log("Player took damage");
+        }
+    Debug.Log("Attacking Player");
+        }
 }

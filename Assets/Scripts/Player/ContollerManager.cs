@@ -14,6 +14,7 @@ public class ControllerManager : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _movement;
     private Animator _animator;
+    
 
     private bool _facingLeft = false;
 
@@ -55,6 +56,10 @@ public class ControllerManager : MonoBehaviour
 
     private void MovePlayer()
     {
+        if (_knockBack.IsGettingKnockedBack)
+        {
+            return;
+        }
         _rb.MovePosition( _rb.position + _movement * _speed * Time.fixedDeltaTime);
     }
 

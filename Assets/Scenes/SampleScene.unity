@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222e84c5dbe2be84d8d7d23658096b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _knockBackDuration: 3
+  _knockBackDuration: 0.2
 --- !u!114 &152549869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingHealth: 500
-  _knockBackForce: 10
+  _knockBackForce: 2
 --- !u!1 &180474201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1023,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
