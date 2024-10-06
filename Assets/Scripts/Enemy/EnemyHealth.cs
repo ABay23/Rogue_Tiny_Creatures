@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private GameObject _iceAilment;
 
     [SerializeField] private int _startingHealth = 10;
-    [SerializeField] private float _knockBackForce = 30f;
+    [SerializeField] private float _knockBackForce = 10f;
 
     
 

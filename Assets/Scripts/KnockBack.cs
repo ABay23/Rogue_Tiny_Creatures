@@ -20,7 +20,7 @@ public class KnockBack : MonoBehaviour
         {
         IsGettingKnockedBack = true;
         Vector2 _difference = (transform.position - _damageSource.position).normalized;
-        Debug.Log($"KnockBack applied to {gameObject.name} with force {_knockBackForce}");
+        //* Debug.Log($"KnockBack applied to {gameObject.name} with force {_knockBackForce}");
         _rb.AddForce(_difference * _knockBackForce * _rb.mass, ForceMode2D.Impulse);
 
         StartCoroutine(KnockBackRoutine());

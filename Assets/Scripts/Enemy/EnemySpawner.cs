@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             //* Optional: Handle the case where the spawn point is not available
-            Debug.Log("Spawn point is occupied, trying another one.");
+            // Debug.Log("Spawn point is occupied, trying another one.");
             //* You can implement a retry mechanism here if desired
         }
 
