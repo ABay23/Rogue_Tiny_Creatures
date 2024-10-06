@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5646767631735382733}
   - component: {fileID: 5577168698974841334}
   - component: {fileID: 6260718418062991008}
+  - component: {fileID: 1729198147867572936}
   m_Layer: 0
   m_Name: Enemy_Slime
   m_TagString: Untagged
@@ -220,3 +221,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 80
+--- !u!114 &1729198147867572936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480276515448347094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8eb799e81c53a4eb35d8aa166bc867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startingHealth: 10
