@@ -22,7 +22,7 @@ public class Sword : MonoBehaviour
         _playerController = new PlayerController();
         _controllerManager = GetComponentInParent<ControllerManager>();
         _activeWeapon = GetComponentInParent<ActiveWeapon>();
-        _weaponCollider = GetComponent<Transform>();
+        // _weaponCollider = GetComponent<Transform>();
         
     }
 
