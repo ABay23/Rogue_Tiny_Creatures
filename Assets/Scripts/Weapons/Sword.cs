@@ -38,11 +38,17 @@ public class Sword : MonoBehaviour
     private void Attack()
     {
         _animator.SetTrigger("Attack");
+        _weaponCollider.gameObject.SetActive(true);
         
     
         _slashAnimation = Instantiate(_swingEffect, _swingEffectPosition.position, Quaternion.identity.normalized);
         _slashAnimation.transform.parent = this.transform.parent;
         SwingAnimation();
+    }
+
+    private void DoneAttacking()
+    {
+        _weaponCollider.gameObject.SetActive(false);
     }
 
     public void SwingAnimation()

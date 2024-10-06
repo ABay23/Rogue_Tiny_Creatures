@@ -460,7 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _swingEffect: {fileID: 5089369448236724079, guid: 30f164d00063e0c49ac57a1123e12d87, type: 3}
   _swingEffectPosition: {fileID: 713753160}
-  _weaponCollider: {fileID: 0}
+  _weaponCollider: {fileID: 1664782864}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,13 +708,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1664782864}
   - component: {fileID: 1664782865}
+  - component: {fileID: 1664782866}
   m_Layer: 0
   m_Name: WeaponCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1664782864
 Transform:
   m_ObjectHideFlags: 0
@@ -723,7 +724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664782863}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -782,6 +783,18 @@ PolygonCollider2D:
       - {x: 1.4771957, y: -0.49727425}
       - {x: 1.6300397, y: 0.4614419}
   m_UseDelaunayMesh: 0
+--- !u!114 &1664782866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664782863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b364a77fbb2e60f4389094187a6a451d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1961619434
 GameObject:
   m_ObjectHideFlags: 0
