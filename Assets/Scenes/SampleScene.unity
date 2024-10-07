@@ -967,8 +967,8 @@ GameObject:
   - component: {fileID: 1739772921}
   - component: {fileID: 1739772920}
   - component: {fileID: 1739772919}
-  - component: {fileID: 1739772918}
   - component: {fileID: 1739772924}
+  - component: {fileID: 1739772925}
   m_Layer: 0
   m_Name: Elite_Virus_0
   m_TagString: Untagged
@@ -976,24 +976,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1739772918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739772917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8eb799e81c53a4eb35d8aa166bc867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyType: 0
-  _poisonAilment: {fileID: 0}
-  _fireAilment: {fileID: 0}
-  _iceAilment: {fileID: 0}
-  _startingHealth: 10
-  _knockBackForce: 15
 --- !u!58 &1739772919
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1055,7 +1037,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!95 &1739772921
 Animator:
   serializedVersion: 5
@@ -1159,6 +1141,19 @@ MonoBehaviour:
   _meleeRange: 10
   _meleeDamage: 5
   _attackCooldown: 2
+--- !u!114 &1739772925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739772917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899edb25b55368545abe9b8b9edb1566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startingHealth: 15
 --- !u!1 &1933928969
 GameObject:
   m_ObjectHideFlags: 0
